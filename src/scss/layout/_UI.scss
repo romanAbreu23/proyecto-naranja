@@ -1,0 +1,16 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.app {
+    width: 85%;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.seccion {
+    padding: 2rem 0;
+
+    .text-center {
+        text-align: center;
+    }
+}

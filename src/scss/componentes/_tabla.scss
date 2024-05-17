@@ -1,0 +1,50 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.desborde {
+    display: block;
+	overflow-x: auto;
+}
+
+.tabla {
+    margin-top: 2rem;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    thead {
+        background: v.$gradiente;
+
+        th {
+            color: v.$blanco;
+            padding: 2rem;
+            text-transform: uppercase;
+        }
+    }
+
+    tbody {
+
+        tr:nth-child(odd) {
+            background-color: v.$blanco;
+        }
+        tr:nth-child(even) {
+            background-color: darken($color: v.$blanco, $amount: 3.5%);
+        }
+        tr, td {
+            font-size: 1.4rem;
+            font-weight: v.$regular;
+            letter-spacing: 0.35;
+            color: v.$negro;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+
+        }
+        tr:hover {
+            background-color: lighten($color: v.$naranja, $amount: 40%);
+        }
+        td:hover {
+            color: v.$naranja;
+        }
+    }
+}

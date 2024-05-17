@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.listado-promotores {
+    display: grid;
+    gap: 2rem;
+
+    @include m.telefono {
+        @include m.grid(2, 2rem);
+    }
+    @include m.tablet {
+        @include m.grid(3, 2rem);
+    }
+    @include m.desktop {
+        @include m.grid(4, 2rem);
+    }
+
+    a {
+        transition-property: transform;
+        transition-duration: 300ms;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    p {
+        font-size: 1.8rem;
+        transition: all 0.2s ease;
+        text-align: left;
+        cursor: pointer;
+    
+        &:hover {
+            color: v.$naranja;
+        }
+    }
+    
+    .promotor {
+        border-bottom: solid 1px v.$gris;
+    }
+}

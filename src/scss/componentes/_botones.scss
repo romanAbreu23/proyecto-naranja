@@ -1,0 +1,49 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.btn {
+    @include m.btn(v.$gradiente, v.$blanco)
+}
+
+.abajo {
+    color: v.$naranja-claro;
+    font-size: 4rem;
+    display: flex;
+    position: fixed;
+    left: 86%;
+    top: 94%;
+
+    @include m.telefono {
+        color: v.$naranja;
+        font-size: 5rem;
+        left: 92.8%;
+        top: 90%;
+    }
+}
+
+.botones-arriba {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arriba{
+        color: v.$naranja;
+        font-size: 4rem;
+        
+        @include m.telefono {
+            color: v.$naranja-claro;
+            font-size: 3.5rem;
+        }
+    }
+    
+    .back{
+        color: v.$naranja-claro;
+        font-size: 4rem;
+
+        @include m.telefono {
+            color: v.$naranja;
+            font-size: 3.5rem;
+        }
+    }
+
+}

@@ -1,0 +1,261 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.applogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90rem;
+}
+
+.wrapper {
+    position: relative;
+    width: 65rem;
+    height: 62rem;
+    margin: 0 2rem 0 2rem;
+    background-color: transparent;
+    border: 2px solid v.$naranja;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    @include m.tablet {
+        width: 75rem;
+        height: 55rem;
+        margin: none;
+    }
+
+    .form-box {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include m.tablet {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            margin: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        img {
+            width: 16rem;
+            margin-bottom: -2rem;
+        }
+
+        h2 {
+            font-size: 3.2rem;
+            margin: 0 auto;
+            padding-bottom: 2rem;
+        }
+
+        // .btn {
+        //     position: relative;
+        //     width: 100%;
+        //     height: 4.5rem;
+        //     background-color: transparent;
+        //     border: none;
+        //     outline: none;
+        //     border-radius: 4rem;
+        //     cursor: pointer;
+        //     font-size: 1.6rem;
+        //     color: v.$blanco;
+        //     font-weight: 600;
+        //     z-index: 1;
+        //     overflow: hidden;
+        // }
+
+        // .btn::before {
+        //     content: '';
+        //     position: absolute;
+        //     top: -100%;
+        //     left: 0;
+        //     width: 100%;
+        //     height: 300%;
+        //     background: v.$gradiente;
+        //     z-index: -1;
+        //     transition: .5s;
+        // }
+
+        // .btn:hover::before {
+        //     top: 0;
+        // }
+    }
+
+    .form-box.login {
+        padding: 14rem 4rem;
+
+        @include m.tablet {
+            left: 0;
+            padding: 0 6rem 0 4rem;
+        }
+
+        .animation {
+            transform: translateX(0);
+            opacity: 1;
+            filter: blur(0);
+            transition: .5s ease;
+            transition-delay: calc(.04s * var(--j));
+        }
+    }
+
+    .input-box {
+        position: relative;
+        width: 100%;
+        height: 5rem;
+        margin: 2.5rem 0;
+
+        input {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid v.$gris;
+            padding-right: 2.3rem;
+            font-size: 1.6rem;
+            color: v.$gris;
+            font-weight: 500;
+            transition: 0.5s;
+        }
+
+        input:focus,
+        input:valid {
+            border-bottom-color: v.$naranja;
+        }
+
+        label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 1.6rem;
+            color: v.$gris;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        input:focus~label,
+        input:valid~label {
+            top: -.5rem;
+            color: v.$naranja;
+        }
+
+        i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+            color: v.$gris;
+            transition: 0.5s;
+        }
+
+        input:focus~i,
+        input:valid~i {
+            color: v.$naranja;
+        }
+    }
+
+    .info-text {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include m.tablet {
+            width: 65%;
+            height: 100%;
+        }
+        .poscion {
+            position: absolute;
+            top: 10%;
+            left: 0;
+            width: 100%;
+
+            @include m.tablet {
+                top: 35%;
+                left: 50%;
+                width: 50%;
+            }
+        }
+        h2, h3 {
+            font-size: 2.4rem;
+            color: v.$blanco;
+            line-height: 1.3;
+            text-transform: uppercase;
+            margin: 0 auto;
+
+            @include m.tablet {
+                font-size: 3rem;
+            }
+        }
+        h3 {
+            font-size: 2rem;
+            @include m.tablet {
+                font-size: 2.4rem;
+                padding-bottom: 0;
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            color: v.$blanco;
+            line-height: 1.3;
+            border-top: solid 2px v.$blanco;
+            border-bottom: solid 2px v.$blanco;
+            text-align: center;
+            
+            @include m.tablet {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    .info-text.login {
+        text-align: center;
+        background: v.$gradiente;
+        border-bottom: none;
+
+        @include m.tablet {
+            right: 2.5rem;
+            text-align: right;
+            background: none;
+            border-bottom: none;
+            padding: 0 2rem 8rem 15rem;
+        }
+
+        .animation {
+            transform: translateX(0);
+            opacity: 1;
+            filter: blur(0);
+            transition: .5s ease;
+            transition-delay: calc(.04s * var(--j));
+        }
+    }
+
+    .bg-animate {
+        @include m.tablet {
+            position: absolute;
+            top: -.4rem;
+            right: 0;
+            width: 85rem;
+            height: 65rem;
+            background: v.$gradiente;
+            border-bottom: none;
+            transform: rotate(10deg) skewY(40deg);
+            transform-origin: bottom right;
+            transition: .5s ease;
+            transition-delay: .6s;
+        }
+    }
+}

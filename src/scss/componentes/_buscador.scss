@@ -1,0 +1,44 @@
+@use 'base/variables' as v;
+
+.contenedor-buscador {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .buscador {
+        background: transparent;
+        border: none;
+        color: v.$naranja;
+        display: inline-block;
+        font-size: 3.5rem;
+        padding: 2rem 0;
+        outline: none;
+        // padding: .3rem 6rem .3rem .3rem;
+        // position: absolute;
+        // right: 8rem;
+        // top: 24rem;
+        transition: width .4s;
+        // width: 0;
+        z-index: 3;
+    }
+
+    .input-buscador {
+        overflow: visible;
+        outline: none;
+        width: 16rem;
+        background: transparent;
+        border: none;
+        color: v.$gris;
+        font-size: 1.8rem;
+        transition: .1s ease;
+        
+        &:focus {
+            border-bottom: solid 1.5px v.$naranja;
+        }
+    }
+}
+
+.filter {
+    display: none;
+}
